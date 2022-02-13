@@ -3,11 +3,10 @@ import { RequestInfo, RequestInit } from "node-fetch";
 
 export interface ConstructorParams {
   debug?: boolean;
-  redis?: Bottleneck.RedisConnectionOptions;
   concurrency?: number;
   retryAfterDefault?: number;
   retryCount?: number;
-  datastore?: "local" | "ioredis";
+  datastore?: "local";
 }
 
 export interface ExecuteParameters {

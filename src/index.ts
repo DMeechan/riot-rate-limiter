@@ -30,8 +30,7 @@ export class RiotRateLimiter {
     concurrency: number;
     retryAfterDefault: number;
     retryCount: number;
-    redis?: Bottleneck.RedisConnectionOptions;
-    datastore: "local" | "ioredis";
+    datastore: "local";
   } = {
     debug: false,
     concurrency: 1,
@@ -56,7 +55,7 @@ export class RiotRateLimiter {
       id,
       maxConcurrent: this.configuration.concurrency,
       datastore: this.configuration.datastore,
-      clientOptions: this.configuration.redis || null,
+      clientOptions: null,
     };
   }
 
